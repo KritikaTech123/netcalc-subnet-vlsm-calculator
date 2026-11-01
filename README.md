@@ -10,13 +10,19 @@ Built as a Computer Networks academic project with a React frontend, Flask REST 
 
 ## Live Demo
 
-The recommended live setup is Vercel for the React frontend and Render for the Flask API. After deployment, add the generated frontend URL here:
+The NetCalc frontend is live on Netlify:
 
-```text
-Live application: https://your-netcalc.vercel.app
-```
+**[Open the NetCalc Live Demo](https://agent-6ae74fdf85114--celebrated-cranachan-b34dca.netlify.app/)**
 
-The frontend uses the deployed Flask API through the `VITE_API_URL` environment variable.
+The current live link hosts the React frontend. To enable subnet calculations, VLSM allocation, and calculation history in the deployed version, connect the frontend to a deployed Flask API using the `VITE_API_URL` environment variable.
+
+### Deployment status
+
+| Component | Status | Platform |
+|---|---|---|
+| React frontend | Live | Netlify |
+| Flask REST API | Local / deploy separately | Render, Railway, or PythonAnywhere |
+| SQLite history | Available when the API is running | SQLite |
 
 ### Deploy the backend on Render
 
@@ -27,7 +33,25 @@ The frontend uses the deployed Flask API through the `VITE_API_URL` environment 
 5. Apply the blueprint from [`render.yaml`](./render.yaml).
 6. Copy the generated API URL, for example `https://netcalc-api.onrender.com`.
 
-### Deploy the frontend on Vercel
+### Deploy the frontend on Netlify
+
+1. Sign in at [netlify.com](https://www.netlify.com/).
+2. Select **Add new site → Import an existing project**.
+3. Connect this GitHub repository.
+4. Set the base directory to `frontend`.
+5. Set the build command to `npm run build`.
+6. Set the publish directory to `frontend/dist`.
+7. Deploy the site.
+
+For a fully connected deployment, add:
+
+```text
+VITE_API_URL=https://your-backend-url/api
+```
+
+to the Netlify environment variables and redeploy.
+
+### Alternative: deploy the frontend on Vercel
 
 1. Sign in at [vercel.com](https://vercel.com).
 2. Select **Add New → Project** and import this repository.
