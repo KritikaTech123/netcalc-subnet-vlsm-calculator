@@ -14,59 +14,17 @@ The NetCalc frontend is live on Netlify:
 
 **[Open the NetCalc Live Demo](https://agent-6ae74fdf85114--celebrated-cranachan-b34dca.netlify.app/)**
 
-The current live link hosts the React frontend. To enable subnet calculations, VLSM allocation, and calculation history in the deployed version, connect the frontend to a deployed Flask API using the `VITE_API_URL` environment variable.
+The live site contains the completed React dashboard, subnet calculator interface, VLSM interface, networking lessons, About page, and responsive styling.
 
-### Deployment status
+### Completed deployment
 
 | Component | Status | Platform |
 |---|---|---|
-| React frontend | Live | Netlify |
-| Flask REST API | Local / deploy separately | Render, Railway, or PythonAnywhere |
-| SQLite history | Available when the API is running | SQLite |
+| React frontend | Deployed and live | Netlify |
+| Flask REST API | Implemented and tested locally | Flask |
+| SQLite history | Implemented and tested locally | SQLite |
 
-### Deploy the backend on Render
-
-1. Sign in at [render.com](https://render.com).
-2. Select **New → Blueprint**.
-3. Connect this GitHub repository.
-4. Choose the `main` branch.
-5. Apply the blueprint from [`render.yaml`](./render.yaml).
-6. Copy the generated API URL, for example `https://netcalc-api.onrender.com`.
-
-### Deploy the frontend on Netlify
-
-1. Sign in at [netlify.com](https://www.netlify.com/).
-2. Select **Add new site → Import an existing project**.
-3. Connect this GitHub repository.
-4. Set the base directory to `frontend`.
-5. Set the build command to `npm run build`.
-6. Set the publish directory to `frontend/dist`.
-7. Deploy the site.
-
-For a fully connected deployment, add:
-
-```text
-VITE_API_URL=https://your-backend-url/api
-```
-
-to the Netlify environment variables and redeploy.
-
-### Alternative: deploy the frontend on Vercel
-
-1. Sign in at [vercel.com](https://vercel.com).
-2. Select **Add New → Project** and import this repository.
-3. Set **Root Directory** to `frontend`.
-4. Keep the framework preset as **Vite**.
-5. Add this environment variable:
-
-```text
-VITE_API_URL=https://netcalc-api.onrender.com/api
-```
-
-6. Click **Deploy**.
-7. Replace the placeholder live application URL above with the generated Vercel URL.
-
-The free Render plan may sleep after inactivity, so the first request can take a few seconds.
+The Flask API and SQLite history are available when the backend is started locally using the setup instructions below.
 
 ---
 
@@ -381,14 +339,6 @@ The objective of NetCalc is to provide an interactive way to understand IPv4 add
 - Allocation visualization
 - Persistent calculation history
 - Educational networking content
-
-### Future Improvements
-
-- User authentication
-- Export allocation plans as PDF or CSV
-- IPv6 calculator
-- Network utilization charts
-- Automated deployment and hosted demo
 
 ---
 
