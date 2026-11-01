@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import { Activity, BookOpen, Calculator, ChevronRight, Clock3, Cpu, Database, Globe2, History, Info, LayoutDashboard, Network, Plus, Trash2, Zap } from "lucide-react";
 import "./styles.css";
 
-const API = "http://localhost:5000/api";
+const API = import.meta.env.VITE_API_URL || "http://localhost:5000/api";
 const concepts = [
   ["IPv4", "A 32-bit address written as four decimal octets, such as 192.168.1.10."],
   ["Subnetting", "Splitting one larger network into smaller, easier-to-manage networks."],

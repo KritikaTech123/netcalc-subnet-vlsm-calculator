@@ -8,6 +8,30 @@ Built as a Computer Networks academic project with a React frontend, Flask REST 
 
 ---
 
+## Live Demo
+
+Deploy the project on Render with the included [`render.yaml`](./render.yaml) blueprint. After deployment, add the generated frontend URL here:
+
+```text
+Live application: https://your-netcalc-frontend.onrender.com
+```
+
+The frontend uses the deployed Flask API automatically through the `VITE_API_URL` environment variable.
+
+### Deploy on Render
+
+1. Sign in at [render.com](https://render.com).
+2. Select **New → Blueprint**.
+3. Connect this GitHub repository.
+4. Choose the `main` branch.
+5. Apply the blueprint from `render.yaml`.
+6. Open the `netcalc-frontend` service URL.
+7. Replace the placeholder URL above with the generated live link.
+
+The free Render plan may sleep after inactivity, so the first request can take a few seconds.
+
+---
+
 ## Features
 
 ### IPv4 Subnet Calculator
